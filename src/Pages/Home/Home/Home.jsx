@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Invitation from '../Invitation/Invitation';
+import Team from '../Team/Team';
 
 const Home = () => {
     const [masters, setMasters] = useState([])
@@ -10,7 +11,7 @@ const Home = () => {
             .then((data) => setMasters(data))
             .catch((error) => console.log(error))
     }, [])
-    console.log(masters);
+    // console.log(masters);
     return (
         <div className='my-[130px]'>
             <div>
@@ -23,6 +24,9 @@ const Home = () => {
                         ></Cart>)
                     }
                 </div>
+            </div>
+            <div className='w-[80%] mx-auto'>
+                <Team></Team>
             </div>
             <div className='w-[80%] mx-auto'>
                 <Invitation></Invitation>

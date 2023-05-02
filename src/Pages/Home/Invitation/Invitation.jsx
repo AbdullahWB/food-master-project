@@ -12,7 +12,7 @@ const Invitation = () => {
                 <p className='text-gray-600 mt-6 md:pl-48 mb-5'>Looking for a dining experience like no other? Look no further than our restaurant! Our culinary experts have crafted a menu that will delight your senses and satisfy your cravings. From classic Italian dishes to modern twists on traditional favorites, we've got something for everyone. So why not come and join us for a truly unforgettable dining experience? We can't wait to welcome you!</p>
                 <p className='text-2xl mb-5 text-black font-semibold'>Monday- Friday: <span className='text-primary'>08am to 12pm</span></p>
                 <p className='text-2xl mb-10 text-black font-semibold'>Saturday - Sunday: <span className='text-primary'>10am to 08pm</span></p>
-                <Link><button className='btn btn-primary'>Book Now</button></Link>
+                <Link><button className='btn btn-primary text-white'>Book Now</button></Link>
             </div>
         </div>
     );
