@@ -24,7 +24,7 @@ const Home = () => {
     }, [])
 
 
-    console.log(foods);
+    // console.log(foods);
     return (
         <div className='my-[130px]'>
             <div>

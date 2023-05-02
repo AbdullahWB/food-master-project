@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaHeart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Cart = ({ master }) => {
     const {name, yearsOfExperience, recipesCount, likesCount, photoUrl, description, id} = master;
@@ -19,7 +20,7 @@ const Cart = ({ master }) => {
                     <h2 className="card-title">Description:</h2>
                     <p>{description}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary text-white">View Recipes</button>
+                       <Link to={`/category/${id}`}><button className="btn btn-primary text-white">View Recipes</button></Link>
                     </div>
                 </div>
             </div>

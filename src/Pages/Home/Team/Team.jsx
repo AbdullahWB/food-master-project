@@ -16,7 +16,7 @@ const Team = () => {
             <div>
                <SingleTeam teams={teams}></SingleTeam>
             </div>
-            <div className='text-right'>
+            <div className='text-right mt-10'>
                 <h1 className='text-5xl font-light text-gray-700'>We Have Awesome team in <span className='text-6xl text-primary font-bold'>Food Master</span> Restaurant.</h1>
                 <p className='text-gray-600 mt-6 md:pl-48 mb-5'>Welcome to our hotel! Our team is made up of a diverse group of individuals who are passionate about hospitality and dedicated to making your stay with us a memorable one. From our friendly front desk staff to our skilled chefs and housekeeping team, everyone works together to ensure your needs are met and your experience is top-notch. <span className='text-xl text-primary font-bold'>Noted!</span>
 

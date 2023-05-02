@@ -56,3 +56,6 @@
   .swiper-button-prev{
     color: #EA6A12;
   }
+  .swiper-pagination-bullet-active{
+    background-color: #EA6A12;
+  }
