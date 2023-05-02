@@ -14,12 +14,7 @@ const Team = () => {
     return (
         <div className='grid md:grid-cols-2 md:gap-8 mt-[130px]'>
             <div>
-                {
-                    teams.map((team) => <SingleTeam
-                        key={team.id}
-                        team={team}
-                    ></SingleTeam>)
-                }
+               <SingleTeam teams={teams}></SingleTeam>
             </div>
             <div className='text-right'>
                 <h1 className='text-5xl font-light text-gray-700'>We Have Awesome team in <span className='text-6xl text-primary font-bold'>Food Master</span> Restaurant.</h1>
