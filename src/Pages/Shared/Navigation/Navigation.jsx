@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     return (
-        <div className='bg-orange-100'>
+        <div className='bg-orange-50'>
             <div className="navbar  w-[80%] mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
