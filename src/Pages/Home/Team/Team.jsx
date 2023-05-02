@@ -10,7 +10,7 @@ const Team = () => {
             .then(data => setTeams(data))
             .catch(error => console.log(error))
     }, [])
-    console.log(teams);
+    // console.log(teams);
     return (
         <div className='grid md:grid-cols-2 md:gap-8 mt-[130px]'>
             <div>
