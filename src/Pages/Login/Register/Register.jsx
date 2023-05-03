@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
+    const [accepted, setAccepted] = useState(false)
 
 
     const handleRegister = event => {
@@ -25,6 +26,10 @@ const Register = () => {
             .catch(error => {
                 console.log(error);
             })
+    }
+
+    const handleAccepted = event => {
+        setAccepted(event.target.checked)
     }
 
     return (
@@ -52,26 +57,16 @@ const Register = () => {
                                     <input type="text" name="photo" id="floating_repeat_password" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer" placeholder=" " required />
                                     <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Photo URL</label>
                                 </div>
-                                {/* <div className="grid md:grid-cols-2 md:gap-6">
-                                    <div className="relative z-0 w-full mb-6 group">
-                                        <input type="text" name="floating_first_name" id="floating_first_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer" placeholder=" " required />
-                                        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
-                                    </div>
-                                    <div className="relative z-0 w-full mb-6 group">
-                                        <input type="text" name="floating_last_name" id="floating_last_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer" placeholder=" " required />
-                                        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
-                                    </div>
-                                </div> */}
                                 <div className='flex justify-between'>
                                     <div className="form-control">
                                         <label className="cursor-pointer label">
-                                            <span className="label-text mr-2">I agree with the terms of use</span>
-                                            <input type="checkbox" className="checkbox checkbox-error" />
+                                            <span className="label-text mr-2">{<>Accept <Link to="/terms">Term & Conditions</Link></>}</span>
+                                            <input onClick={handleAccepted} type="checkbox" className="checkbox checkbox-error" />
                                         </label>
                                     </div>
                                 </div>
                                 <div className='flex justify-center items-center flex-col'>
-                                    <button type="submit" className="btn mt-5 mb-5 btn-primary w-[30%] text-white">Register</button>
+                                    <button disabled={!accepted} type="submit" className="btn mt-5 mb-5 btn-primary w-[30%] text-white">Register</button>
                                     <div className='flex flex-col justify-center items-center'>
                                         <p className='mb-5'>or sign in with other accounts?</p>
                                         <div className='grid gap-8 grid-cols-2'>

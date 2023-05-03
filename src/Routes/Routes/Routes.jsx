@@ -4,6 +4,8 @@ import Home from "../../Pages/Home/Home/Home";
 import Details from "../../Pages/Details/Details";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
+import Terms from "../../Pages/Terms/Terms";
 
 const router = createBrowserRouter([
     {
@@ -16,7 +18,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/category/:id',
-                element: <Details></Details>,
+                element: <PrivetRoute><Details></Details></PrivetRoute>,
                 loader: ({params})=> fetch(`http://localhost:3000/chefs/${params.id}`)
             },
             {
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/terms',
+                element: <Terms></Terms>
             }
         ]
     }
