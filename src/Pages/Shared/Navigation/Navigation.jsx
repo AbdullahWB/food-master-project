@@ -3,7 +3,15 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Navigation = () => {
-    const {user} = useContext(AuthContext)
+    const { user, LogOut } = useContext(AuthContext)
+
+    const handleLogout = () => {
+        LogOut()
+            .then()
+            .catch(error => {
+                console.log(error);
+            })
+    }
     return (
         <div className='bg-orange-50'>
             <div className="navbar  w-[80%] mx-auto">
@@ -36,7 +44,7 @@ const Navigation = () => {
                         }
                     </div>
                     {
-                        user ? <Link to='/' className="btn btn-primary text-white">Logout</Link> : <Link to='/login' className="btn btn-primary text-white">Login</Link>
+                        user ? <Link to='/' onClick={handleLogout} className="btn btn-primary text-white">Logout</Link> : <Link to='/login' className="btn btn-primary text-white">Login</Link>
                     }
                 </div>
             </div>
