@@ -4,7 +4,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, googleLogin, githubLogin } = useContext(AuthContext)
     const [accepted, setAccepted] = useState(false)
 
 
@@ -30,6 +30,28 @@ const Register = () => {
 
     const handleAccepted = event => {
         setAccepted(event.target.checked)
+    }
+
+    const handleGoogle = () => {
+        googleLogin()
+            .then(result => {
+                const user = result.user; 
+                console.log(user);
+            })
+            .catch(error => { 
+                console.log(error);
+            })
+    }
+
+    const handleGithub = () => { 
+        githubLogin()
+        .then(result => {
+            const user = result.user; 
+            console.log(user);
+        })
+        .catch(error => { 
+            console.log(error);
+        })
     }
 
     return (
@@ -70,8 +92,8 @@ const Register = () => {
                                     <div className='flex flex-col justify-center items-center'>
                                         <p className='mb-5'>or sign in with other accounts?</p>
                                         <div className='grid gap-8 grid-cols-2'>
-                                            <button className="btn btn-outline btn-accent"><FaGoogle className='mr-2'></FaGoogle> Google</button>
-                                            <button className="btn btn-outline btn-secondary"><FaGithub className='mr-2'></FaGithub> GitHub</button>
+                                            <button onClick={handleGoogle} className="btn btn-outline btn-accent"><FaGoogle className='mr-2'></FaGoogle> Google</button>
+                                            <button onClick={handleGithub} className="btn btn-outline btn-secondary"><FaGithub className='mr-2'></FaGithub> GitHub</button>
                                         </div>
                                         <p className='mt-5'>Already have an Account <Link to='/login' className='text-primary'>Sign In</Link></p>
                                     </div>

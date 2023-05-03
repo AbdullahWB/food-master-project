@@ -4,7 +4,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext)
+    const { signIn, googleLogin, githubLogin } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
@@ -27,6 +27,30 @@ const Login = () => {
                 console.log(error);
             })
     }
+
+    const handleGoogle = () => {
+        googleLogin()
+            .then(result => {
+                const user = result.user; 
+                console.log(user);
+            })
+            .catch(error => { 
+                console.log(error);
+            })
+    }
+
+    const handleGithub = () => { 
+        githubLogin()
+        .then(result => {
+            const user = result.user; 
+            console.log(user);
+        })
+        .catch(error => { 
+            console.log(error);
+        })
+    }
+
+
     return (
         <div className='py-[130px]'>
             <div className='grid grid-cols-2 w-[80%] mx-auto gap-8'>
@@ -61,8 +85,8 @@ const Login = () => {
                                         <div className='flex flex-col justify-center items-center'>
                                             <p className='mb-5'>or sign in with other accounts?</p>
                                             <div className='grid gap-8 grid-cols-2'>
-                                                <button className="btn btn-outline btn-accent"><FaGoogle className='mr-2'></FaGoogle> Google</button>
-                                                <button className="btn btn-outline btn-secondary"><FaGithub className='mr-2'></FaGithub> GitHub</button>
+                                                <button onClick={handleGoogle} className="btn btn-outline btn-accent"><FaGoogle className='mr-2'></FaGoogle> Google</button>
+                                                <button onClick={handleGithub} className="btn btn-outline btn-secondary"><FaGithub className='mr-2'></FaGithub> GitHub</button>
                                             </div>
                                             <p className='mt-5'>Don’t have an account? <Link to='/register' className='text-primary'>Click here to sign up.</Link></p>
                                         </div>
