@@ -3,6 +3,7 @@ import Cart from '../Cart/Cart';
 import Invitation from '../Invitation/Invitation';
 import Team from '../Team/Team';
 import HotFood from '../HotFood/HotFood';
+import Header from '../../Shared/Header/Header';
 
 const Home = () => {
     const [masters, setMasters] = useState([])
@@ -26,7 +27,9 @@ const Home = () => {
 
     // console.log(foods);
     return (
-        <div className='my-[130px]'>
+        <div>
+            <Header></Header>
+             <div className='my-[130px]'>
             <div>
                 <h1 className='text-6xl text-gray-800 text-center font-light mb-10'>Our ProudFull <span className='text-primary font-bold '>Chefs</span></h1>
                 <div className='w-[80%] mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-7'>
@@ -51,6 +54,7 @@ const Home = () => {
                 <Invitation></Invitation>
             </div>
         </div>
+       </div>
     );
 };
 
