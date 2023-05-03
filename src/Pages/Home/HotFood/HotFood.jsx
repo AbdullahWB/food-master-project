@@ -29,12 +29,12 @@ const HotFood = ({ foods }) => {
                     <div className='flex'>
                         <span className='text-xl ml-10 mr-2'>{focusedCategory?.rating}</span>
                         <div className="rating">
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400"  />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                    </div>
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        </div>
                     </div>
                 </div>
                 <Link><button className='btn btn-primary px-10 py-3 text-white mt-5'>Order Now <FaArrowRight className='ml-3'></FaArrowRight></button></Link>
