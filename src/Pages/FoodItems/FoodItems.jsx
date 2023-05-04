@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { useNavigation } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 const FoodItems = ({ item }) => {
-    const { category_id, rating, price, instructions, img, name } = item;
+    const { category_id, rating, price, instructions, img, name, loading } = item;
+    const navigation = useNavigation();
+    console.log(navigation.state)
+    if (navigation.state === "loading") {
+        return <Loading />;
+    }
     const [click, setClick] = useState()
     const handleFavoriteClick = () => {
         setClick(true);

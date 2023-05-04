@@ -24,16 +24,19 @@ const AuthProvider = ({ children }) => {
     }
 
     const googleLogin = () => {
+        setLoading(true)
         const provider = new GoogleAuthProvider()
         return signInWithPopup(auth, provider)
     }
 
     const githubLogin = () => { 
+        setLoading(true)
         const provider = new GithubAuthProvider()
         return signInWithPopup(auth, provider)
     }
 
     const resetEmail = (email) => {
+        setLoading(true)
         return sendPasswordResetEmail(auth, email)
     }
 
