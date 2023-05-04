@@ -39,7 +39,7 @@ const Home = () => {
                 </div>
                 <div>
                     <h1 className='md:text-6xl text-4xl text-gray-800 text-center font-light mb-10'>Our ProudFull <span className='text-primary font-bold '>Chefs</span></h1>
-                    <LazyLoad className='w-full h-auto' offset={300}>
+                    <LazyLoad className='w-full h-auto' threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
                         <div className='w-[80%] mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7'>
                             {
                                 masters.map(master => <Cart

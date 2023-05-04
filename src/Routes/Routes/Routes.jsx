@@ -11,6 +11,7 @@ import About from "../../Pages/About/About";
 import Favorite from "../../Pages/Home/Favorite/Favorite";
 import Recipes from "../../Pages/Recipes/Recipes";
 import Error from "../../Pages/error/Error";
+import FoodDetails from "../../Pages/FoodDetails/FoodDetails";
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
             {
                 path: '/recipes',
                 element: <PrivetRoute><Recipes></Recipes></PrivetRoute>
+            },
+            {
+                path: '/foodDetails/:id',
+                element: <FoodDetails></FoodDetails>,
+                loader: ({params})=> fetch(`https://food-lover-server-abdullahwb.vercel.app/categories/category/${params.id}`)
             }
         ]
     }
