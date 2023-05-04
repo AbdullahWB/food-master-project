@@ -4,7 +4,7 @@ import { useNavigation } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 
 const FoodItems = ({ item }) => {
-    const { category_id, rating, price, instructions, img, name, loading } = item;
+    const { category_id, ingredients, rating, price, instructions, img, name, loading } = item;
     const navigation = useNavigation();
     console.log(navigation.state)
     if (navigation.state === "loading") {
@@ -21,6 +21,7 @@ const FoodItems = ({ item }) => {
                 <figure><img className='w-full h-full object-cover' src={img} alt="Movie" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-4xl text-primary">{name}</h2>
+                    <p>Needed Items: {ingredients}</p>
                     <p>{instructions}</p>
                     <div className='flex justify-start'>
                         <span className='text-xl mr-2'>{rating}</span>
