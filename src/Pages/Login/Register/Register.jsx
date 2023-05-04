@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 const Register = () => {
     const { createUser, googleLogin, githubLogin } = useContext(AuthContext)
@@ -24,7 +25,8 @@ const Register = () => {
                 console.log(createdUser);
             })
             .catch(error => {
-                console.log(error);
+                const err = (error.message);
+                toast.error(err)
             })
     }
 
@@ -39,7 +41,8 @@ const Register = () => {
                 console.log(user);
             })
             .catch(error => { 
-                console.log(error);
+                const err = (error.message);
+                toast.error(err)
             })
     }
 
@@ -50,7 +53,8 @@ const Register = () => {
             console.log(user);
         })
         .catch(error => { 
-            console.log(error);
+            const err = (error.message);
+            toast.error(err)
         })
     }
 
@@ -82,7 +86,7 @@ const Register = () => {
                                 <div className='flex justify-between'>
                                     <div className="form-control">
                                         <label className="cursor-pointer label">
-                                            <span className="label-text mr-2">{<>Accept <Link to="/terms">Term & Conditions</Link></>}</span>
+                                            <span className="label-text mr-2">{<>Accept<Link className='btn btn-link btn-primary' to="/terms">Term & Conditions</Link></>}</span>
                                             <input onClick={handleAccepted} type="checkbox" className="checkbox checkbox-error" />
                                         </label>
                                     </div>
