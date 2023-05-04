@@ -1,12 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
 const Register = () => {
     const { createUser, googleLogin, githubLogin } = useContext(AuthContext)
     const [accepted, setAccepted] = useState(false)
+    const navigate = useNavigate();
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
 
 
     const handleRegister = event => {
@@ -23,6 +26,7 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 const err = (error.message);
@@ -39,6 +43,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user; 
                 console.log(user);
+                navigate(from, { replace: true })
             })
             .catch(error => { 
                 const err = (error.message);
@@ -51,6 +56,7 @@ const Register = () => {
         .then(result => {
             const user = result.user; 
             console.log(user);
+            navigate(from, { replace: true })
         })
         .catch(error => { 
             const err = (error.message);
