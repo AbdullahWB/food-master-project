@@ -5,17 +5,22 @@ import Team from '../Team/Team';
 import HotFood from '../HotFood/HotFood';
 import Header from '../../Shared/Header/Header';
 import LazyLoad from 'react-lazy-load';
+import Loading from '../../Loading/Loading';
 
 
 const Home = () => {
     const [masters, setMasters] = useState([])
     const [foods, setFoods] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch('https://food-lover-server-abdullahwb.vercel.app/chefs')
             .then((res) => res.json())
             .then((data) => setMasters(data))
             .catch((error) => console.log(error))
+        setTimeout(() => {
+            setLoading(false)
+        }, 3000)
     }, [])
 
     useEffect(() => {
@@ -25,6 +30,10 @@ const Home = () => {
             .catch((error) => console.log(error))
     }, [])
 
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     // console.log(foods);
     return (
@@ -39,7 +48,7 @@ const Home = () => {
                 </div>
                 <div>
                     <h1 className='md:text-6xl text-4xl text-gray-800 text-center font-light mb-10'>Our ProudFull <span className='text-primary font-bold '>Chefs</span></h1>
-                    <LazyLoad className='w-full h-auto' threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
+                    <LazyLoad className='w-full h-auto' threshold={0.95} onContentVisible={() => { console.log('loaded!') }}>
                         <div className='w-[80%] mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7'>
                             {
                                 masters.map(master => <Cart

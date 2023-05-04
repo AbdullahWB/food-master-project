@@ -13,8 +13,8 @@ const Navigation = () => {
             })
     }
     return (
-        <div className='bg-orange-50'>
-            <div className="navbar  w-[80%] mx-auto">
+        <div className=''>
+            <div className="navbar  w-[80%] mx-auto z-50">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,7 +33,7 @@ const Navigation = () => {
                             </div>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl font-bold">Food <span className='text-primary ml-1'>Master</span></a>
+                    <a className="z-50 btn btn-ghost normal-case text-xl font-bold">Food <span className='text-primary ml-1'>Master</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -44,7 +44,7 @@ const Navigation = () => {
                         <li className='hover:text-primary mx-2'><NavLink className={({ isActive }) => isActive ? "active text-decoration-none text-white text-bold" : "text-decoration-none text-black"} to="/blog">Blog</NavLink></li>
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end z-50">
                     <div className="w-10 lg:flex hidden rounded-full mr-5">
                         {
                             user && <img className='w-full h-full rounded-full' title={user.displayName} src={user ? user.photoURL : "https://w7.pngwing.com/pngs/753/432/png-transparent-user-profile-2018-in-sight-user-conference-expo-business-default-business-angle-service-people-thumbnail.png"} />
