@@ -12,8 +12,8 @@ const Footer = () => {
                         <form>
                             <div className="form-control">
                                 <div className="input-group">
-                                    <input type="text" placeholder="Email address" className="input input-bordered border-blue-50 bg-transparent md:h-[64px] md:w-[330px] lg:h-[64px] lg:w-[330px]" />
-                                    <button className="btn btn-primary px-6 py-4 lg:w-[146px] md:w-[146px] lg:h-[64px] md:h-[64px] text-white font-bold">
+                                    <input type="text" placeholder="Email address" className="input input-bordered border-blue-50 bg-transparent md:h-[64px] w-[100%] md:w-[330px] lg:h-[64px] lg:w-[330px]" />
+                                    <button className="btn btn-primary md:px-6 py-4 lg:w-[146px] md:w-[146px] lg:h-[64px] md:h-[64px] text-white font-bold">
                                         Subscribe
                                     </button>
                                 </div>

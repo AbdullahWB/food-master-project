@@ -16,7 +16,7 @@ const Cart = ({ master }) => {
                         <span className='mt-2 text-xl text-black flex'>Like Count: <span className='flex'><FaHeart className='mt-[7px] mx-1 text-red-600'></FaHeart> {likesCount}</span></span>
                     </div>
                </div>
-                <div className="card-body md:p-0 p-0 md:pt-0 pt-5">
+                <div className="card-body md:p-0 p-0 md:pt-5 pt-5">
                     <h2 className="card-title">Description:</h2>
                     <p>{description}</p>
                     <div className="card-actions justify-end">

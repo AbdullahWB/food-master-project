@@ -13,7 +13,7 @@ const Navigation = () => {
             })
     }
     return (
-        <div className=''>
+        <div className='bg-orange-50'>
             <div className="navbar  w-[80%] mx-auto z-50">
                 <div className="navbar-start">
                     <div className="dropdown">
