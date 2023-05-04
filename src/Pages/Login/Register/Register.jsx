@@ -59,7 +59,7 @@ const Register = () => {
     }
 
     return (
-        <div className='grid grid-cols-2 w-[80%] mx-auto gap-8 py-[130px]'>
+        <div className='grid md:grid-cols-2 grid-cols-1 w-[80%] mx-auto gap-8 py-[130px]'>
             <div className='flex justify-center items-center'>
                 <div className="card w-full bg-base-100 shadow-xl">
                     <div className="card-body p-10">
@@ -86,7 +86,7 @@ const Register = () => {
                                 <div className='flex justify-between'>
                                     <div className="form-control">
                                         <label className="cursor-pointer label">
-                                            <span className="label-text mr-2">{<>Accept<Link className='btn btn-link btn-primary' to="/terms">Term & Conditions</Link></>}</span>
+                                            <span className="label-text mr-2">{<>Accept<Link className='btn btn-link btn-primary ml-2 p-0' to="/terms">Term & Conditions</Link></>}</span>
                                             <input onClick={handleAccepted} type="checkbox" className="checkbox checkbox-error" />
                                         </label>
                                     </div>

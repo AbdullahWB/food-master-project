@@ -17,7 +17,7 @@ const CartRecipe = ({recipe}) => {
     };
     return (
         <div className='w-[80%] mx-auto my-[130px]'>
-            <div className="card card-side w-full h-full grid grid-cols-2 p-7 bg-base-100 shadow-xl">
+            <div className="card card-side w-full h-full grid md:grid-cols-2 grid-cols-1 p-7 bg-base-100 shadow-xl">
                 <figure><img className='w-full h-full object-cover' src={img} alt="Movie" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-4xl text-primary">{name}</h2>

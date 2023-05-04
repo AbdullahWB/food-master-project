@@ -22,7 +22,7 @@ const HotFood = ({ foods }) => {
     return (
         <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 md:gap-7'>
             <div>
-                <h1 className='text-6xl text-primary md:mt-20 font-semibold uppercase'>{focusedCategory?.name}</h1>
+                <h1 className='lg:text-6xl md:text-4xl text-2xl text-primary md:mt-20 font-semibold uppercase'>{focusedCategory?.name}</h1>
                 <p className='pr-[50%] mt-5 text-gray-800'>{focusedCategory?.description}</p>
                 <div className='flex mt-6 mb-5'>
                     <p className='text-xl'>Price: {focusedCategory?.price}$</p>

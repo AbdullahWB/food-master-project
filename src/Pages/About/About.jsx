@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className='grid grid-cols-2 gap-8 w-[80%] mx-auto my-[130px]'>
+        <div className='grid md:grid-cols-2 grid-cols-1 gap-8 w-[80%] mx-auto my-[130px]'>
             <div>
                 <h1 className='text-6xl text-primary font-semibold'>About Our Restaurant</h1>
                 <p className='text-gray-600 text-xl mt-5'>At Food Master, we're passionate about bringing the best of Italian cuisine to our customers. Our team of talented chefs are some of the most experienced in the industry, with decades of experience crafting delicious, authentic dishes.</p>

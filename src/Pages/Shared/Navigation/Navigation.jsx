@@ -26,6 +26,11 @@ const Navigation = () => {
                             <li className='hover:text-primary mx-2'><NavLink className={({ isActive }) => isActive ? "active text-decoration-none text-white text-bold" : "text-decoration-none text-black"} to="/favorite">Favorite</NavLink></li>
                             <li className='hover:text-primary mx-2'><NavLink className={({ isActive }) => isActive ? "active text-decoration-none text-white text-bold" : "text-decoration-none text-black"} to="/about">About</NavLink></li>
                             <li className='hover:text-primary mx-2'><NavLink className={({ isActive }) => isActive ? "active text-decoration-none text-white text-bold" : "text-decoration-none text-black"} to="/blog">Blog</NavLink></li>
+                            <div className="w-10 ml-5 rounded-full mr-5">
+                                {
+                                    user && <img className='w-full h-full rounded-full' title={user.displayName} src={user ? user.photoURL : "https://w7.pngwing.com/pngs/753/432/png-transparent-user-profile-2018-in-sight-user-conference-expo-business-default-business-angle-service-people-thumbnail.png"} />
+                                }
+                            </div>
                         </ul>
                     </div>
                     <a className="btn btn-ghost normal-case text-xl font-bold">Food <span className='text-primary ml-1'>Master</span></a>
@@ -40,7 +45,7 @@ const Navigation = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="w-10 rounded-full mr-5">
+                    <div className="w-10 lg:flex hidden rounded-full mr-5">
                         {
                             user && <img className='w-full h-full rounded-full' title={user.displayName} src={user ? user.photoURL : "https://w7.pngwing.com/pngs/753/432/png-transparent-user-profile-2018-in-sight-user-conference-expo-business-default-business-angle-service-people-thumbnail.png"} />
                         }

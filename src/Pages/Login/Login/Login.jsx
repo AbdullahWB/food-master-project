@@ -75,10 +75,10 @@ const Login = () => {
 
     return (
         <div className='py-[130px]'>
-            <div className='grid grid-cols-2 w-[80%] mx-auto gap-8'>
+            <div className='grid md:grid-cols-2 grid-cols-1 w-[80%] mx-auto gap-8'>
                 <div className='flex justify-center items-center'>
                     <div className="card w-full bg-base-100 shadow-xl">
-                        <div className="card-body p-10">
+                        <div className="card-body md:p-10 p-5">
                             <h1 className='text-3xl text-primary'>Login</h1>
                             <p className='text-gray-600 mb-5'>You Have account place Login</p>
                             <div>

@@ -32,15 +32,15 @@ const Home = () => {
             <Header></Header>
             <div className='my-[130px]'>
                 <div className='my-[130px]'>
-                    <h1 className='text-6xl text-gray-800 text-center font-light mb-10'>Today Hot Foods is <span className='text-primary font-bold '>Food Master</span></h1>
+                    <h1 className='md:text-6xl text-4xl text-gray-800 text-center font-light mb-10'>Today Hot Foods is <span className='text-primary font-bold'>Food Master</span></h1>
                     <div className='w-[80%] mx-auto'>
                         <HotFood foods={foods}></HotFood>
                     </div>
                 </div>
                 <div>
-                    <h1 className='text-6xl text-gray-800 text-center font-light mb-10'>Our ProudFull <span className='text-primary font-bold '>Chefs</span></h1>
+                    <h1 className='md:text-6xl text-4xl text-gray-800 text-center font-light mb-10'>Our ProudFull <span className='text-primary font-bold '>Chefs</span></h1>
                     <LazyLoad className='w-full h-auto' offset={300}>
-                        <div className='w-[80%] mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-7'>
+                        <div className='w-[80%] mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7'>
                             {
                                 masters.map(master => <Cart
                                     key={master.id}
