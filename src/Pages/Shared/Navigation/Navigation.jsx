@@ -24,7 +24,7 @@ const Navigation = () => {
                             <li className='hover:text-primary'><Link to="/">Home</Link></li>
                             <li className='hover:text-primary'><Link to="/">Favorite</Link></li>
                             <li className='hover:text-primary'><Link to="/">About</Link></li>
-                            <li className='hover:text-primary'><Link to="/">Blog</Link></li>
+                            <li className='hover:text-primary'><Link to="/blog">Blog</Link></li>
                         </ul>
                     </div>
                     <a className="btn btn-ghost normal-case text-xl font-bold">Food <span className='text-primary ml-1'>Master</span></a>
@@ -34,7 +34,7 @@ const Navigation = () => {
                         <li className='hover:text-primary'><Link to="/">Home</Link></li>
                         <li className='hover:text-primary'><Link to="/">Favorite</Link></li>
                         <li className='hover:text-primary'><Link to="/">About</Link></li>
-                        <li className='hover:text-primary'><Link to="/">Blog</Link></li>
+                        <li className='hover:text-primary'><Link to="/blog">Blog</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">

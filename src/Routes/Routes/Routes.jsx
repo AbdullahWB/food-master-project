@@ -6,6 +6,7 @@ import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import Terms from "../../Pages/Terms/Terms";
+import Blog from "../../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: '/terms',
                 element: <Terms></Terms>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
         ]
     }
