@@ -13,12 +13,12 @@ const Team = () => {
     // console.log(teams);
     return (
         <div className='grid md:grid-cols-2 md:gap-8 mt-[130px]'>
-            <div>
+            <div className='order-last'>
                <SingleTeam teams={teams}></SingleTeam>
             </div>
-            <div className='text-right mt-10'>
+            <div className='text-left mt-10'>
                 <h1 className='text-5xl font-light text-gray-700'>We Have Awesome team in <span className='text-6xl text-primary font-bold'>Food Master</span> Restaurant.</h1>
-                <p className='text-gray-600 mt-6 md:pl-48 mb-5'>Welcome to our hotel! Our team is made up of a diverse group of individuals who are passionate about hospitality and dedicated to making your stay with us a memorable one. From our friendly front desk staff to our skilled chefs and housekeeping team, everyone works together to ensure your needs are met and your experience is top-notch. <span className='text-xl text-primary font-bold'>Noted!</span>
+                <p className='text-gray-600 mt-6 md:pr-48 mb-5'>Welcome to our hotel! Our team is made up of a diverse group of individuals who are passionate about hospitality and dedicated to making your stay with us a memorable one. From our friendly front desk staff to our skilled chefs and housekeeping team, everyone works together to ensure your needs are met and your experience is top-notch. <span className='text-xl text-primary font-bold'>Noted!</span>
 
 Each team member brings a unique set of skills and experience to the table, making our hotel a dynamic and welcoming environment. Whether you need assistance with your room, recommendations for local attractions, or simply a friendly smile, our team is here to help.
 

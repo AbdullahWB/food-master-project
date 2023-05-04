@@ -22,7 +22,8 @@ const Navigation = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li className='hover:text-primary'><Link to="/">Home</Link></li>
-                            <li className='hover:text-primary'><Link to="/">Favorite</Link></li>
+                            <li className='hover:text-primary'><Link to="/recipes">Recipes</Link></li>
+                            <li className='hover:text-primary'><Link to="/favorite">Favorite</Link></li>
                             <li className='hover:text-primary'><Link to="/about">About</Link></li>
                             <li className='hover:text-primary'><Link to="/blog">Blog</Link></li>
                         </ul>
@@ -32,7 +33,8 @@ const Navigation = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li className='hover:text-primary'><Link to="/">Home</Link></li>
-                        <li className='hover:text-primary'><Link to="/">Favorite</Link></li>
+                        <li className='hover:text-primary'><Link to="/recipes">Recipes</Link></li>
+                            <li className='hover:text-primary'><Link to="/favorite">Favorite</Link></li>
                         <li className='hover:text-primary'><Link to="/about">About</Link></li>
                         <li className='hover:text-primary'><Link to="/blog">Blog</Link></li>
                     </ul>

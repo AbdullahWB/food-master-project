@@ -8,6 +8,8 @@ import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import Terms from "../../Pages/Terms/Terms";
 import Blog from "../../Pages/Blog/Blog";
 import About from "../../Pages/About/About";
+import Favorite from "../../Pages/Home/Favorite/Favorite";
+import Recipes from "../../Pages/Recipes/Recipes";
 
 const router = createBrowserRouter([
     {
@@ -37,11 +39,19 @@ const router = createBrowserRouter([
             },
             {
                 path: '/blog',
-                element: <Blog></Blog>
+                element: <PrivetRoute><Blog></Blog></PrivetRoute>
             },
             {
                 path: '/about',
                 element: <About></About>
+            },
+            {
+                path: '/favorite',
+                element: <PrivetRoute><Favorite></Favorite></PrivetRoute>
+            },
+            {
+                path: '/recipes',
+                element: <PrivetRoute><Recipes></Recipes></PrivetRoute>
             }
         ]
     }
