@@ -4,7 +4,7 @@ import CartRecipe from '../CartRecipe/CartRecipe';
 const Recipes = () => {
     const [recipes, setRecipes] = useState([])
     useEffect(() => {
-        fetch('http://localhost:3000/recipes')
+        fetch('https://food-lover-server-abdullahwb.vercel.app/recipes')
             .then(res => res.json())
             .then(data => setRecipes(data))
             .catch(error => console.log(error))

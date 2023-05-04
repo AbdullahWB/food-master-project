@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             {
                 path: '/category/:id',
                 element: <PrivetRoute><Details></Details></PrivetRoute>,
-                loader: ({params})=> fetch(`http://localhost:3000/chefs/${params.id}`)
+                loader: ({params})=> fetch(`https://food-lover-server-abdullahwb.vercel.app/chefs/${params.id}`)
             },
             {
                 path: '/login',

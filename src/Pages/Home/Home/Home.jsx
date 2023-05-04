@@ -12,14 +12,14 @@ const Home = () => {
     const [foods, setFoods] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/chefs')
+        fetch('https://food-lover-server-abdullahwb.vercel.app/chefs')
             .then((res) => res.json())
             .then((data) => setMasters(data))
             .catch((error) => console.log(error))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3000/foods')
+        fetch('https://food-lover-server-abdullahwb.vercel.app/foods')
             .then((res) => res.json())
             .then((data) => setFoods(data))
             .catch((error) => console.log(error))

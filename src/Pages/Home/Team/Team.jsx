@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Team = () => {
     const [teams, setTeams] = useState([])
     useEffect(() => {
-        fetch('http://localhost:3000/teams')
+        fetch('https://food-lover-server-abdullahwb.vercel.app/teams')
             .then(res => res.json())
             .then(data => setTeams(data))
             .catch(error => console.log(error))

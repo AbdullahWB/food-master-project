@@ -8,7 +8,7 @@ const Details = () => {
     const [items, setItems] = useState()
 
     useEffect(() => {
-        fetch(`http://localhost:3000/categories/${category.id}`)
+        fetch(`https://food-lover-server-abdullahwb.vercel.app/categories/${category.id}`)
             .then(res => res.json())
             .then(data => setItems(data))
             .catch(error => console.log(error))
