@@ -19,8 +19,8 @@ const Header = () => {
                         </div>
                         <div className='md:text-right text-center lg:mt-20'>
                             <h1 className='md:text-5xl text-xl capitalize text-white'>Hear We have World favorite and Famous All <span className='text-primary font-bold md:text-6xl text-2xl uppercase'>Italian Food</span> Collection</h1>
-                            <p className='text-gray-100 mt-5 lg:pl-48'>Italian food is characterized by its simplicity and emphasis on fresh, high-quality ingredients. It is a cuisine that celebrates seasonal produce, with dishes often featuring tomatoes, olive oil, garlic, basil, and cheese. Pasta and pizza are two of the most well-known Italian dishes, but the cuisine also includes a variety of meats, seafood, vegetables, and soups. Italian food is often enjoyed in a social setting, with family and friends gathered around the table to share a meal and good conversation.</p>
-                            <Link><button className='btn btn-primary text-white mt-5'>Get Explore</button></Link>
+                            <p className='text-gray-100 mt-5 hidden md:flex lg:pl-48'>Italian food is characterized by its simplicity and emphasis on fresh, high-quality ingredients. It is a cuisine that celebrates seasonal produce, with dishes often featuring tomatoes, olive oil, garlic, basil, and cheese. Pasta and pizza are two of the most well-known Italian dishes, but the cuisine also includes a variety of meats, seafood, vegetables, and soups. Italian food is often enjoyed in a social setting, with family and friends gathered around the table to share a meal and good conversation.</p>
+                            <Link to='/recipes'><button className='btn btn-primary text-white mt-5'>Get Explore</button></Link>
                             <p className='uppercase text-2xl text-primary mt-5'>you need! scroll down</p>
                         </div>
                     </div>

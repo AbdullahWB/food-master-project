@@ -17,7 +17,7 @@ const CartRecipe = ({ recipe }) => {
     const handleFavoriteClick = (id) => {
         setClick(true);
         addToDb(id)
-        toast.success("Your item has been added to favorites")
+        toast.success("Your item has been added to favorites ❤️❤️")
     };
     return (
         <div className='w-full'>

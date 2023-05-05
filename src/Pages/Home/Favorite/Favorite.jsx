@@ -42,18 +42,18 @@ const Favorite = () => {
         if (recipes.length > 0) {
             setRecipes([])
             deleteShoppingCart()
-            return toast.success('All Items Removed! 👍')
+            return toast.success('All Items Removed! 🙄')
         }
-        return toast.error('No Shopping Items Available! ⚠️')
+        return toast.error('No Shopping Items Available! 😁')
     }
 
     const orderHandler = () => { 
         if (recipes.length > 0) {
             setRecipes([])
             deleteShoppingCart()
-            return toast.success('Order Done! 👍')
+            return toast.success('Order Done! 🙂')
         }
-        return toast.error('No Shopping Items Available! ⚠️')
+        return toast.error('No Shopping Items Available! 😁')
     }
 
     return (

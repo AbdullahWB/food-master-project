@@ -23,7 +23,7 @@ const Team = () => {
 Each team member brings a unique set of skills and experience to the table, making our hotel a dynamic and welcoming environment. Whether you need assistance with your room, recommendations for local attractions, or simply a friendly smile, our team is here to help.
 
 We take pride in providing exceptional service and creating a warm, inviting atmosphere for our guests. We look forward to welcoming you to our hotel and introducing you to our team!</p>
-                <Link><button className='btn btn-primary text-white'>Explore Hotel</button></Link>
+                <Link to='/booking'><button className='btn btn-primary text-white'>Explore Hotel</button></Link>
             </div>
         </div>
     );

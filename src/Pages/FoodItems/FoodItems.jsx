@@ -17,7 +17,7 @@ const FoodItems = ({ item }) => {
     const handleFavoriteClick = (id) => {
         setClick(true);
         addToDb(id)
-        toast.success("Your item has been added to favorites")
+        toast.success("Your item has been added to favorites ❤️❤️")
     };
 
 
