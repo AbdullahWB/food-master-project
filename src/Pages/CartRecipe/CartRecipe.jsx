@@ -23,7 +23,7 @@ const CartRecipe = ({ recipe }) => {
         <div className='w-full'>
             <tr className='lg:grid lg:grid-cols-12 flex w-full'>
                 <th className='col-span-1'>
-                    {category_id}
+                    {/* {category_id} */}
                 </th>
                 <td className='col-span-4'>
                     <div className="flex items-center space-x-3">

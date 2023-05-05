@@ -46,9 +46,10 @@ const Navigation = () => {
                 </div>
                 <div className="navbar-end z-50">
                     <div className="w-10 rounded-full mr-5">
-                        {
-                            user && <img className='w-full h-full border border-primary rounded-full' title={user.displayName} src={user ? user.photoURL : "https://w7.pngwing.com/pngs/753/432/png-transparent-user-profile-2018-in-sight-user-conference-expo-business-default-business-angle-service-people-thumbnail.png"} />
-                        }
+                        <Link to='/profile'>
+                            {
+                                user && <img className='w-full h-full border border-primary rounded-full' title={user.displayName} src={user ? user.photoURL : "https://w7.pngwing.com/pngs/753/432/png-transparent-user-profile-2018-in-sight-user-conference-expo-business-default-business-angle-service-people-thumbnail.png"} />
+                            }</Link>
                     </div>
                     {
                         user ? <Link to='/' onClick={handleLogout} className="btn hidden md:flex btn-primary text-white">Logout</Link> : <Link to='/login' className="btn btn-primary text-white">Login</Link>

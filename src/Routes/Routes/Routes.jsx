@@ -13,6 +13,7 @@ import Recipes from "../../Pages/Recipes/Recipes";
 import Error from "../../Pages/error/Error";
 import FoodDetails from "../../Pages/FoodDetails/FoodDetails";
 import Booking from "../../Pages/Booking/Booking";
+import Profile from "../../Pages/profile/Profile";
 
 const router = createBrowserRouter([
     {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
             {
                 path: '/booking',
                 element: <PrivetRoute><Booking></Booking></PrivetRoute>
+            },
+            {
+                path: '/profile',
+                element: <PrivetRoute><Profile></Profile></PrivetRoute>
             }
         ]
     }
