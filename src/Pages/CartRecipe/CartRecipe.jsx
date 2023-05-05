@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Link, useNavigation } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import { toast } from 'react-hot-toast';
+import Rating from 'react-rating';
+import { FaRegStar, FaStar } from "react-icons/fa";
 
-const CartRecipe = ({recipe}) => {
-    const { category_id,ingredients , rating, price, instructions, img, name, loading, id } = recipe;
+const CartRecipe = ({ recipe }) => {
+    const { category_id, ingredients, rating, price, instructions, img, name, loading, id } = recipe;
     const navigation = useNavigation();
     console.log(navigation.state)
     if (navigation.state === "loading") {
@@ -16,30 +18,50 @@ const CartRecipe = ({recipe}) => {
         toast.success("Your item has been added to favorites")
     };
     return (
-        <div className='w-[80%] mx-auto my-[130px]'>
-            <div className="card card-side w-full h-full grid md:grid-cols-2 grid-cols-1 p-7 bg-base-100 shadow-xl">
-                <figure><img className='w-full h-full object-cover' src={img} alt="Movie" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title text-4xl text-primary">{name}</h2>
-                    <p>Needed Items: {ingredients}</p>
-                    <p>{instructions}</p>
-                    <div className='flex justify-start'>
-                        <span className='text-xl mr-2'>{rating}</span>
-                        <div className="rating">
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+        <div className='w-full'>
+            <tr className='lg:grid lg:grid-cols-12 flex w-full'>
+                <th className='col-span-1'>
+                    <label>
+                        <input type="checkbox" className="checkbox" />
+                    </label>
+                </th>
+                <td className='col-span-4'>
+                    <div className="flex items-center space-x-3">
+                        <div className="avatar">
+                            <div className="mask mask-squircle w-12 h-12">
+                                <img src={img} alt="Avatar Tailwind CSS Component" />
+                            </div>
+                        </div>
+                        <div>
+                            <div className="font-bold">{name}</div>
+                            <div className="text-sm opacity-50">Italy</div>
                         </div>
                     </div>
-                    <span className='text-xl'>Price: {price}$</span>
+                </td>
+                <td className='col-span-2'>
+                    <Rating
+                        placeholderRating={rating}
+                        readonly
+                        emptySymbol={<FaRegStar></FaRegStar>}
+                        placeholderSymbol={<FaStar className='text-primary'></FaStar>}
+                        fullSymbol={<FaStar></FaStar>}
+                    />
+                </td>
+                <td className='col-span-1'>
+                    <span className=''>Price: {price}$</span>
+                </td>
+                <td className='col-span-2'>
                     <button className="btn btn-primary btn-outline text-white" onClick={handleFavoriteClick} disabled={click}>
                         {click ? 'Added to Favorites' : 'Add Favorite'}
                     </button>
-                    <Link className='btn btn-primary text-white' to={`/foodDetails/${id}`}>View Details</Link>
-                </div>
-            </div>
+                </td>
+                <th className='col-span-2'>
+                    <>
+                        <Link className='btn btn-primary text-white' to={`/foodDetails/${id}`}>View Details</Link>
+                    </>
+                </th>
+            </tr>
+
         </div>
     );
 };

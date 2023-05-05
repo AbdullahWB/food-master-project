@@ -10,13 +10,19 @@ const Recipes = () => {
             .catch(error => console.log(error))
     }, [])
     return (
-        <div>
-            {
-                recipes.map(recipe => <CartRecipe
-                    key={recipe.id}
-                    recipe={recipe}
-                ></CartRecipe>)
-            }
+        <div className="overflow-scroll w-full">
+            <table className="table lg:w-[80%] mx-auto my-[130px]">
+                {/* head */}
+                <tbody className='w-full'>
+                    {/* row 1 */}
+                    {
+                        recipes.map(recipe => <CartRecipe
+                            key={recipe.id}
+                            recipe={recipe}
+                        ></CartRecipe>)
+                    }
+                </tbody>
+            </table>
         </div>
     );
 };
