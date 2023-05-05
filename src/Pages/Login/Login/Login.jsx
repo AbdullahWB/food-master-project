@@ -1,11 +1,13 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
 const Login = () => {
     const { signIn, googleLogin, githubLogin, resetEmail } = useContext(AuthContext)
+    const [show, setShow] = useState(false)
     const navigate = useNavigate();
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
@@ -58,7 +60,7 @@ const Login = () => {
     }
 
     const handelRestPasswords = (event) => {
-        const email =(emailRef.current.value);
+        const email = (emailRef.current.value);
         if (!email) {
             toast.error("Enter your email to rest password ⚠️")
         }
@@ -88,7 +90,14 @@ const Login = () => {
                                         <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
                                     </div>
                                     <div className="relative z-0 w-full mb-6 group">
-                                        <input type="password" name="password" id="floating_repeat_password" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer" placeholder=" " required />
+                                        <input type={show ? "text" : "password"} name="password" id="floating_repeat_password" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer" placeholder=" " required />
+                                        <p className='text-[20px] inline-block absolute right-[10px] top-[8px] cursor-pointer' onClick={() => setShow(!show)}>
+                                            <span>
+                                                {
+                                                    show ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
+                                                }
+                                            </span>
+                                        </p>
                                         <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
                                     </div>
                                     <div className='flex justify-between'>
