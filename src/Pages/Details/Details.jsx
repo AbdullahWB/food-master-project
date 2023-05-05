@@ -29,7 +29,7 @@ const Details = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[80%] py-[130px] mx-auto grid lg:grid-cols-1 md:grid-cols-1 grid-cols-1 gap-7'>
+            <div className='w-[80%] py-[130px] mx-auto grid lg:grid-cols-3 md:grid-cols-1 grid-cols-1 gap-7'>
                 {
                     items?.map(item => <FoodItems
                         key={item.id}

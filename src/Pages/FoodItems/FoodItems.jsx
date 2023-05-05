@@ -23,12 +23,12 @@ const FoodItems = ({ item }) => {
 
     return (
         <div>
-            <div className="card card-side w-full h-full grid md:grid-cols-2 grid-cols-1 p-7 bg-base-100 shadow-xl">
-                <figure><img className='w-full h-full object-cover' src={img} alt="Movie" /></figure>
+            <div className="w-full h-full grid md:grid-row-2 grid-row-1 p-7 bg-base-100 shadow-xl rounded-lg">
+                <figure><img className='w-full h-full object-cover rounded-lg' src={img} alt="Movie" /></figure>
                 <div className="card-body p-0 md:p-5 md:pt-0 pt-5">
                     <h2 className="card-title text-4xl text-primary">{name}</h2>
                     <p>Needed Items: {ingredients}</p>
-                    <p>{instructions}</p>
+                    <p>{instructions.length < 250 ? <>{instructions}</> : <>{instructions.slice(0, 150)} .... <Link className='text-primary' to={`/foodDetails/${id}`}>Read More</Link> </>}</p>
                     <div className='flex justify-start'>
                         <span className='text-xl mr-2'>{rating}</span>
                         <Rating
