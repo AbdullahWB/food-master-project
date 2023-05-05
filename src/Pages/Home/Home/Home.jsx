@@ -41,7 +41,7 @@ const Home = () => {
             <Header></Header>
             <div className='my-[130px]'>
                 <div className='my-[130px]'>
-                    <h1 className='md:text-6xl text-4xl text-gray-800 text-center font-light mb-10'>Today Hot Foods is <span className='text-primary font-bold'>Food Master</span></h1>
+                    <h1 className='md:text-6xl text-3xl text-gray-800 text-center font-light mb-10'>Today Hot Foods in <span className='text-primary font-bold'>Food Master</span></h1>
                     <div className='w-[80%] mx-auto'>
                         <HotFood foods={foods}></HotFood>
                     </div>

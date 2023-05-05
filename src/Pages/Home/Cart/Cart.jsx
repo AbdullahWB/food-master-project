@@ -11,9 +11,9 @@ const Cart = ({ master }) => {
                     <figure><img className='w-full h-[250px] object-cover rounded-lg' src={photoUrl} alt="Shoes" /></figure>
                     <div>
                         <h1 className='text-[22px] text-primary font-medium'>{name}</h1>
-                        <p className='mt-2 text-xl text-black'>Experience: {yearsOfExperience}</p>
+                        <p className='mt-2 text-xl text-black'>Experience: {yearsOfExperience} year</p>
                         <p className='mt-2 text-xl text-black'>Recipes: {recipesCount}</p>
-                        <span className='mt-2 text-xl text-black flex'>Like Count: <span className='flex'><FaHeart className='mt-[7px] mx-1 text-red-600'></FaHeart> {likesCount}</span></span>
+                        <span className='mt-2 text-xl text-black flex'>Like Count: <span className='flex'><FaHeart className='mt-[6px] mx-1 text-red-600'></FaHeart> {likesCount}</span></span>
                     </div>
                </div>
                 <div className="card-body md:p-0 p-0 md:pt-5 pt-5">

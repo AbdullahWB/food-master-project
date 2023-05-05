@@ -10,7 +10,7 @@ const Recipes = () => {
             .catch(error => console.log(error))
     }, [])
     return (
-        <div className="overflow-scroll w-full">
+        <div className="overflow-scroll md:overflow-hidden w-full">
             <table className="table lg:w-[80%] mx-auto my-[130px]">
                 {/* head */}
                 <tbody className='w-full'>

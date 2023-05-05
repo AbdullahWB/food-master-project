@@ -1,5 +1,7 @@
 import React from 'react';
+import Rating from 'react-rating';
 import { useLoaderData } from 'react-router-dom';
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const FoodDetails = () => {
     const details = useLoaderData()
@@ -16,13 +18,14 @@ const FoodDetails = () => {
                 <p className='text-gray-600 mt-5'>Price: {details.price}$</p>
                 <div className='flex justify-start mt-5'>
                     <span className='text-xl mr-2 '>{details.rating}</span>
-                    <div className="rating">
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                    </div>
+                    <Rating
+                        className='mt-1'
+                        placeholderRating={details.rating}
+                        readonly
+                        emptySymbol={<FaRegStar></FaRegStar>}
+                        placeholderSymbol={<FaStar className='text-primary'></FaStar>}
+                        fullSymbol={<FaStar></FaStar>}
+                    />
                 </div>
             </div>
         </div>

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link, useNavigation } from 'react-router-dom';
 import Loading from '../Loading/Loading';
+import Rating from 'react-rating';
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const FoodItems = ({ item }) => {
     const { category_id, ingredients, rating, price, instructions, img, name, loading, id } = item;
@@ -26,13 +28,14 @@ const FoodItems = ({ item }) => {
                     <p>{instructions}</p>
                     <div className='flex justify-start'>
                         <span className='text-xl mr-2'>{rating}</span>
-                        <div className="rating">
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        </div>
+                        <Rating
+                            className='mt-1'
+                            placeholderRating={rating}
+                            readonly
+                            emptySymbol={<FaRegStar></FaRegStar>}
+                            placeholderSymbol={<FaStar className='text-primary'></FaStar>}
+                            fullSymbol={<FaStar></FaStar>}
+                        />
                     </div>
                     <span className='text-xl'>Price: {price}$</span>
                     <button className="btn btn-primary btn-outline text-white" onClick={handleFavoriteClick} disabled={click}>

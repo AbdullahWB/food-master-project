@@ -37,9 +37,9 @@ const SingleTeam = ({ teams }) => {
                             <div className='relative'>
                                 <img className='w-full rounded-lg' src={team.photo_url} />
                                 <div className="absolute inset-0 scale-[98.5%] bg-[#000] bg-opacity-50 rounded-lg flex flex-col px-10 justify-center items-center">
-                                    <h1 className='text-5xl mb-2 font-bold text-white'>{team.name}</h1>
-                                    <h3 className='text-3xl mb-5 font-semibold text-white'>{team.work_title}</h3>
-                                    <p className='text-xl font-normal text-white'>{team.description}</p>
+                                    <h1 className='md:text-5xl text-2xl mb-2 font-bold text-white'>{team.name}</h1>
+                                    <h3 className='md:text-3xl mb-5 font-semibold text-white'>{team.work_title}</h3>
+                                    <p className='md:text-xl font-normal text-white'>{team.description}</p>
                                 </div>
                             </div>
                         </SwiperSlide>
