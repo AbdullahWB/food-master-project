@@ -4,6 +4,7 @@ import Loading from '../Loading/Loading';
 import { toast } from 'react-hot-toast';
 import Rating from 'react-rating';
 import { FaRegStar, FaStar } from "react-icons/fa";
+import { addToDb } from '../../Utils/FackDb';
 
 const CartRecipe = ({ recipe }) => {
     const { category_id, ingredients, rating, price, instructions, img, name, loading, id } = recipe;
@@ -13,17 +14,16 @@ const CartRecipe = ({ recipe }) => {
         return <Loading />;
     }
     const [click, setClick] = useState()
-    const handleFavoriteClick = () => {
+    const handleFavoriteClick = (id) => {
         setClick(true);
+        addToDb(id)
         toast.success("Your item has been added to favorites")
     };
     return (
         <div className='w-full'>
             <tr className='lg:grid lg:grid-cols-12 flex w-full'>
                 <th className='col-span-1'>
-                    <label>
-                        <input type="checkbox" className="checkbox" />
-                    </label>
+                    {category_id}
                 </th>
                 <td className='col-span-4'>
                     <div className="flex items-center space-x-3">
@@ -51,7 +51,7 @@ const CartRecipe = ({ recipe }) => {
                     <span className=''>Price: {price}$</span>
                 </td>
                 <td className='col-span-2'>
-                    <button className="btn btn-primary btn-outline text-white" onClick={handleFavoriteClick} disabled={click}>
+                    <button className="btn btn-primary btn-outline text-white" onClick={() => handleFavoriteClick(id)} disabled={click}>
                         {click ? 'Added to Favorites' : 'Add Favorite'}
                     </button>
                 </td>

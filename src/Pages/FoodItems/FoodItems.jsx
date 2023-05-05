@@ -4,6 +4,7 @@ import { Link, useNavigation } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import Rating from 'react-rating';
 import { FaRegStar, FaStar } from "react-icons/fa";
+import { addToDb } from '../../Utils/FackDb';
 
 const FoodItems = ({ item }) => {
     const { category_id, ingredients, rating, price, instructions, img, name, loading, id } = item;
@@ -13,10 +14,12 @@ const FoodItems = ({ item }) => {
         return <Loading />;
     }
     const [click, setClick] = useState()
-    const handleFavoriteClick = () => {
+    const handleFavoriteClick = (id) => {
         setClick(true);
+        addToDb(id)
         toast.success("Your item has been added to favorites")
     };
+
 
     return (
         <div>
@@ -38,7 +41,7 @@ const FoodItems = ({ item }) => {
                         />
                     </div>
                     <span className='text-xl'>Price: {price}$</span>
-                    <button className="btn btn-primary btn-outline text-white" onClick={handleFavoriteClick} disabled={click}>
+                    <button className="btn btn-primary btn-outline text-white" onClick={()=> handleFavoriteClick(id)} disabled={click}>
                         {click ? 'Added to Favorites' : 'Add Favorite'}
                     </button>
                     <Link className='btn btn-primary text-white' to={`/foodDetails/${id}`}>View Details</Link>
